@@ -28,7 +28,7 @@ describe('orderCancel', ()=> {
         };
         spyOn(console, 'log');
         orderCancel(inputs, orderList);
-        expect(console.log).toHaveBeenCalledWith("Error: the booking is invalid!");
+        expect(console.log).toHaveBeenCalledWith("Error: the booking being cancelled does not exist!");
     });
     it("should print error text", ()=> {
         const input = "U003 2017-08-01 18:00~20:00 A C";
@@ -45,7 +45,7 @@ describe('orderCancel', ()=> {
         };
         spyOn(console, 'log');
         orderCancel(inputs, orderList);
-        expect(console.log).toHaveBeenCalledWith("Error: the booking is invalid!");
+        expect(console.log).toHaveBeenCalledWith("Error: the booking being cancelled does not exist!");
     });
     it("should print correct text", ()=> {
         const input = 'U003 2017-08-01 21:00~22:00 A C';

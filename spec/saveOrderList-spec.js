@@ -22,7 +22,7 @@ describe('saveOrderList', ()=> {
         const inputs = input.split(" ");
         spyOn(console, 'log');
         saveOrderList(endDate, startDate, inputs, orderList)
-        expect(console.log).toHaveBeenCalledWith("Error: the booking is invalid!");
+        expect(console.log).toHaveBeenCalledWith("Error: the booking conflicts with existing bookings!");
     });
     it("should print correct text", ()=> {
         const input = "U003 2017-08-03 18:00~20:00 A";

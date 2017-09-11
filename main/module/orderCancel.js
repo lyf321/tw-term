@@ -9,10 +9,10 @@ function orderCancel(inputs, orderList) {
         if (cancel.tag && cancelOrder(cancel.cancel, cancel.keys, orderList)) {
             console.log("Success: the booking is accepted!");
         } else {
-            console.log("Error: the booking is invalid!")
+            console.log("Error: the booking being cancelled does not exist!")
         }
     } else {
-        console.log("Error: the booking is invalid!");
+        console.log("Error: the booking being cancelled does not exist!");
     }
 }
 

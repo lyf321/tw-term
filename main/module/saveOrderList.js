@@ -4,11 +4,11 @@
 
 const saveOrder = require("./saveOrder");
 
-function saveOrderList(endDate, startDate, inputs,orderList) {
+function saveOrderList(endDate, startDate, inputs, orderList) {
     if (endDate > startDate) {
         var save = saveOrder(inputs, orderList);
         if (save) {
-            console.log("Error: the booking is invalid!");
+            console.log("Error: the booking conflicts with existing bookings!");
         } else {
             console.log("Success: the booking is accepted!");
         }

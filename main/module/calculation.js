@@ -5,48 +5,26 @@ const getSubtotal = require("./getSubTotal");
 
 function calculation(orderList) {
     let total = 0;
-
-    let orderItem = {};
-    let result;
-    // console.log("收入汇总");
-    // console.log("---");
-
-
+    let allOrder = {};
+    let allOrderTotal = {};
+    let orderItem = [];
 
     for (var key in orderList) {
-        let allOrder = {};
-        // console.log("场地:" + key);
+        let orders = {};
         let order = orderList[key];
-
-        //根据时间排序，用sort试一下。
-        // for (let i = 0; i < order.length; i++) {
-        //     subtotal += order[i].money;
-        //     if (order[i].mark === 1) {
-        //         console.log(order[i].orderDate + " " + order[i].time + " 违约金 " + order[i].money);
-        //     } else {
-        //         console.log(order[i].orderDate + " " + order[i].time + " " + order[i].money);
-        //     }
-        // }
-
         let subtotal = getSubtotal(order);
-        console.log(key, subtotal);
+
         total += parseInt(subtotal);
-
-        allOrder[key] = orderList[key];
-        allOrder.subtotal = parseInt(subtotal);
-        orderItem.allOrder = allOrder;
-        orderItem.total = total;
-
-
-        // let orderMessages = getOrderMessage(orderItem.allOrder[key]);
-        //
-        // result = `${orderMessages}小计：${subtotal}(元)`;
-        // console.log(result,"\n");
+        orders[key] = orderList[key];
+        orders.subtotal = parseInt(subtotal);
+        orderItem.push(orders);
     }
-    return orderItem;
 
+    allOrder.orderItems = orderItem;
+    allOrderTotal.allOrder = allOrder;
+    allOrderTotal.total = total;
 
-    // console.log("---\n总计:", parseInt(orderItem.total), "(元)");
+    return allOrderTotal;
 }
 
 function getOrderMessage(orderMessage) {

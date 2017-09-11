@@ -24,18 +24,11 @@ function saveOrder(inputs, orderList) {
     return tag;
 }
 
-
-//修改：
 function judgeSaveOrder(order, inputs, tag) {
     for (let i = 0; i < order.length; i++) {
         let judgeOrderTime = judgeTime(order[i].time, inputs[2]);
 
-        if (order[i].orderDate === inputs[1]&&judgeOrderTime) {
-            // if (judgeOrderTime) {
-            //     tag = true;
-            // } else {
-            //     tag = false;
-            // }
+        if (order[i].orderDate === inputs[1] && judgeOrderTime) {
             tag = true;
         } else {
             tag = false;

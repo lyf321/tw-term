@@ -25,7 +25,7 @@ function cancelOrder(cancelI, keys, orderList) {
         return true;
     } else if (order[cancelI].mark === 0 && order[cancelI].week === 1) {
         order[cancelI].mark = 1;
-        order[cancelI].money = ((order[cancelI].money) / 4).toFixed(2);
+        order[cancelI].money = ((order[cancelI].money) / 4);
         return true;
     } else {
         return false;

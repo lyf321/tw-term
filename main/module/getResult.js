@@ -13,11 +13,11 @@ function getResult(allOrder) {
                 if (orderA) {
                     return `场地：A
 ${orderA}
-小计：${order.subtotal}(元)
+小计：${order.subtotal}元
 `
                 } else {
                     return `场地：A
-小计：${order.subtotal}(元)
+小计：${order.subtotal}元
 `
                 }
                 break;
@@ -26,11 +26,11 @@ ${orderA}
                 if (orderB) {
                     return `场地：B
 ${orderB}
-小计：${order.subtotal}(元)
+小计：${order.subtotal}元
 `
                 } else {
                     return `场地：B
-小计：${order.subtotal}(元)
+小计：${order.subtotal}元
 `
                 }
                 break;
@@ -39,11 +39,11 @@ ${orderB}
                 if (orderC) {
                     return `场地：C
 ${orderC}
-小计：${order.subtotal}(元)
+小计：${order.subtotal}元
 `
                 } else {
                     return `场地：C
-小计：${order.subtotal}(元)
+小计：${order.subtotal}元
 `
                 }
                 break;
@@ -52,10 +52,10 @@ ${orderC}
                 if (orderD) {
                     return `场地：D
 ${orderD}
-小计：${order.subtotal}(元)`
+小计：${order.subtotal}元`
                 } else {
                     return `场地：D
-小计：${order.subtotal}(元)`
+小计：${order.subtotal}元`
                 }
         }
     }).join("\n");
@@ -63,7 +63,7 @@ ${orderD}
 ---
 ${result}
 ---
-总计:${allOrder.total}`;
+总计：${allOrder.total}元`;
 
     return list;
 }

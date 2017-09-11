@@ -9,10 +9,8 @@ function getSortItem(orderList) {
             var dateb = b.time.split("~");
             var a = `${a.orderDate} ${datea[0]}`;
             var b = `${b.orderDate} ${dateb[0]}`;
-            // console.log(a,b);
             return new Date(a).getTime() - new Date(b).getTime();
         });
-        // console.log(orderList[key]);
     }
     return orderList;
 }

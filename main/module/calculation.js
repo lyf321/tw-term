@@ -27,17 +27,4 @@ function calculation(orderList) {
     return allOrderTotal;
 }
 
-function getOrderMessage(orderMessage) {
-    return orderMessage.map((message)=> {
-        let result;
-        if (message.mark === 1) {
-            result = `${message.orderDate} ${message.time} 违约金 ${message.money}`;
-        } else {
-            result = `${message.orderDate} ${message.time} ${message.money}`;
-        }
-        return result;
-    }).join('\n');
-}
-
-
 module.exports = calculation;
